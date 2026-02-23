@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Tetris Arcade</title>
+  <title>Tetris</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="tetris.svg">
+  <link rel="icon" type="image/svg+xml" href="resource/tetris.svg">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
       <div class="box hold-box">
         <canvas id="hold-canvas" width="96" height="96"></canvas>
       </div>
+      <div id="zawarudo-text"><kbd>T</kbd> : ZA WARUDO</div>
     </div> 
 
     <div class="game-center">
@@ -23,7 +24,7 @@
         
         <div id="pause-menu" class="hidden">
           <h2>PAUSE</h2>
-          <button id="resume-btn">REPRENDRE</button>
+          <button id="resume-btn">Restart</button>
         </div>
         
         <canvas id="game" width="240" height="480"></canvas>
@@ -49,13 +50,15 @@
         <p><kbd>P / Echap</kbd> Pause</p>
       </div>
     </div>
-
   </div>
 
+  <footer>Made by <a href="https://github.com/LamourMathys" target="_blank">S3nok0</a></footer>
+  
   <script src="js/logic.js"></script>
   <script src="js/render.js"></script>
   <script src="js/game.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/easter-eggs.js"></script>
 
 </body>
 </html>

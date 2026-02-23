@@ -197,3 +197,82 @@ body.jojo-mode h2 {
   color: #ff00ff;
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
 }
+
+body.za-warudo .game-border, 
+body.za-warudo .box, 
+body.za-warudo canvas {
+  filter: invert(1) hue-rotate(180deg);
+  transition: filter 0.1s;
+}
+
+#zawarudo-text {
+  opacity: 0;
+  text-align: center;
+  margin-top: 20px;
+  color: #ff00ff;
+  font-size: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.jojo-mode #zawarudo-text {
+  opacity: 1;
+  animation: jojoPulse 1s infinite alternate;
+}
+
+@keyframes jojoPulse {
+  from {
+    text-shadow: 0 0 5px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+}
+
+#zawarudo-text kbd {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+#zawarudo-text.activated {
+  animation: zaWarudoBurst 0.5s ease-out forwards !important;
+}
+
+#zawarudo-text.activated kbd {
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+  transition: all 0.1s;
+}
+
+@keyframes zaWarudoBurst {
+  0% { transform: scale(1); text-shadow: 0 0 10px #ff00ff; color: #ff00ff; }
+  20% { transform: scale(1.4); text-shadow: 0 0 50px white, 0 0 80px #ff00ff; color: white; }
+  100% { transform: scale(1); text-shadow: 0 0 20px #ff00ff; color: #ff00ff; }
+}
+
+/*-----end of easter egg -----*/
+
+
+footer {
+  position: absolute;
+  bottom: 20px;       
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: #888;       
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: var(--accent-primary); 
+  text-decoration: none;        
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--text-color);     
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}

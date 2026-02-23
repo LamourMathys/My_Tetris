@@ -2,7 +2,7 @@ window.isPlaying = false;
 window.isPaused = false; 
 
 
-window.bgMusic = new Audio('theme.mp3');
+window.bgMusic = new Audio('resource/theme.mp3');
 window.bgMusic.loop = true;  
 window.bgMusic.volume = 0.5; 
 
@@ -91,70 +91,7 @@ document.addEventListener('keydown', (e) => {
   }
       
   // Utility keys
-  if (e.key === 'r' || e.key === 'ArrowUp') rotatePiece();
-  if (e.key === 'h') holdCurrentPiece();
+  if (e.key === 'r' || e.key === 'ArrowUp'|| e.key === 'R') rotatePiece();
+  if (e.key === 'h' || e.key === 'H') holdCurrentPiece();
 });
 
-// --- EASTER EGGS ---
-
-// 1. Classic Konami Code
-const konamiCode = [
-  "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-  "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
-  "b", "a"
-];
-let index = 0;
-document.addEventListener("keydown", (event) => {
-  if (event.key === konamiCode[index]) {
-    index++;
-    if (index === konamiCode.length) {
-      window.location.href = "easteregg.html"; //send them to doom
-    }
-  } else {
-    index = 0; 
-  }
-});
-
-const MarioCode = ["m", "a", "r", "i", "o"];
-let index2 = 0;
-document.addEventListener("keydown", (event) => {
-  if (event.key === MarioCode[index2]) {
-    index2++;
-    if (index2 === MarioCode.length) {
-      window.location.href = "easteregg2.html"; //it's a me mario
-    }
-  } else {
-    index2 = 0; 
-  }
-});
-
-const JoJoCode = ["j", "o", "j", "o"];
-let index3 = 0;
-document.addEventListener("keydown", (event) => {
-  if (event.key === JoJoCode[index3]) {
-    index3++;
-    
-    if (index3 === JoJoCode.length) {
-      if (window.bgMusic) {
-        window.bgMusic.pause();
-      }
-      
-      window.bgMusic = new Audio('easteregg.mp3'); 
-      window.bgMusic.loop = true;
-      window.bgMusic.volume = 0.5;
-
-      document.body.classList.add('jojo-mode');
-
-      if (window.isPlaying && !window.isPaused) {
-        window.bgMusic.play();
-      } else {
-        alert("Awaken, my masters!");
-      }
-      
-      index3 = 0; 
-    }
-    
-  } else {
-    index3 = 0; 
-  }
-});
