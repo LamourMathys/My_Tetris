@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tetris Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="tetris.svg">
+</head>
+<body>
+
+  <div class="tetris-wrapper">
+    
+    <div class="side-panel left-panel">
+      <h2>HOLD</h2>
+      <div class="box hold-box">
+        <canvas id="hold-canvas" width="96" height="96"></canvas>
+      </div>
+    </div> 
+
+    <div class="game-center">
+      <div class="game-border" id="game-container">
+        
+        <div id="pause-menu" class="hidden">
+          <h2>PAUSE</h2>
+          <button id="resume-btn">REPRENDRE</button>
+        </div>
+        
+        <canvas id="game" width="240" height="480"></canvas>
+      </div>
+    </div>
+
+    <div class="side-panel right-panel">
+      <h2>SCORE</h2>
+      <div class="box score-box">
+        <span id="score">0</span>
+      </div>
+
+      <button id="start-btn">START</button>
+      <button id="pause-btn" disabled>PAUSE</button>
+
+      <div class="controls">
+        <h3>Controls</h3>
+        <p><kbd>←</kbd> <kbd>→</kbd> Left / Right</p>
+        <p><kbd>↓</kbd> Fast Drop</p>
+        <p><kbd>Space</kbd> Hard Drop</p>
+        <p><kbd>R</kbd> Rotation</p>
+        <p><kbd>H</kbd> Hold</p>
+        <p><kbd>P / Echap</kbd> Pause</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/logic.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
